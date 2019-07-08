@@ -1,3 +1,5 @@
+
+
 def removeDuplicates(self, nums):
         """
         :type nums: List[int]
@@ -14,4 +16,3 @@ def removeDuplicates(self, nums):
             n=n+1
 
         return(len(nums))
-                
