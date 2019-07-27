@@ -121,16 +121,3 @@ class Solution(object):
             curNode = curNode.next
 
         return dummyHead.next
-# wrong solution:
-def mergeTwoLists(l1, l2):
-    l1 = l1.
-    l1_list = l1.split('->')
-    l2_list = l2.split('->')
-
-    concat_list = l2_list + l1_list
-
-    concat_list = sorted(concat_list)
-
-    output = '->'.join(concat_list)
-
-return(output)
