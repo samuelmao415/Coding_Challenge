@@ -46,3 +46,20 @@ AND tmp.Salary >= e.Salary
 GROUP BY d.Name, e.Name, e.Salary
 HAVING COUNT(DISTINCT tmp.Salary) <=3
 ORDER BY e.Salary DESC
+
+
+
+
+WITH salary_rank AS
+(
+SELECT *
+, DENSE_RANK() OVER(PARTITION BY DepartmentId ORDER BY Salary DESC) AS Rank
+FROM Employee
+)
+SELECT d.Name AS Department
+, s.Name AS Employee
+, s.Salary
+FROM salary_rank s
+INNER JOIN Department d
+ON d.Id = s.DepartmentId
+WHERE RANK <=3
