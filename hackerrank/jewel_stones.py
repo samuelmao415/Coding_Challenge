@@ -1,15 +1,8 @@
 J = "aA"
 S = "aAAbbbb"
 
-
 jewels = [j for j in J]
-
 stones = [s for s in S]
-
-
-jewels
-stones
-
 
 jewel_dict = dict.fromkeys(jewels , 0)
 for stone in stones:
